@@ -11,12 +11,12 @@ const fs = require('fs-extra')
 
 const bannerPlugin = new webpack.BannerPlugin(
   '// { "framework": "Vue" }\n',
-  {raw: true}
+  { raw: true }
 )
 
-function getEntryFileContent(entryPath, vueFilePath) {
+function getEntryFileContent (entryPath, vueFilePath) {
   let relativePath = path.relative(path.join(entryPath, '../'), vueFilePath);
-  // relativePath = relativePath.replace(/\/ig/, '/')
+  relativePath = relativePath.replace(/\\/ig, '/');
   return `
 /**
  * @author walid
@@ -41,7 +41,7 @@ new Vue(App)
 
 const entry = {}
 
-function walk(dir) {
+function walk (dir) {
   dir = dir || '.'
   let directory = path.join(__dirname, './src', dir)
   let entryDirectory = path.join(__dirname, './src/entry');
@@ -66,7 +66,7 @@ function walk(dir) {
 
 walk()
 
-function getBaseConfig() {
+function getBaseConfig () {
   return {
     entry: entry,
     output: {
