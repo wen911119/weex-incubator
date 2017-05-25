@@ -33,6 +33,7 @@ Vue.component('osc-navbar', require("components/osc-navbar"))
 Vue.component('osc-tabbar', require("components/osc-tabbar"))
 Vue.component('osc-list', require("components/osc-list"))
 Vue.component('osc-scroller', require("components/osc-scroller"))
+Vue.use(require("enhancers/noticeEnhancer.js"))
 
 App.el = '#root'
 new Vue(App)
@@ -78,6 +79,7 @@ function getBaseConfig () {
       alias: {
         'assets': path.resolve(__dirname, './src/assets/'),
         'components': path.resolve(__dirname, './src/components/'),
+        'enhancers': path.resolve(__dirname, './src/enhancers/'),
         'constants': path.resolve(__dirname, './src/constants/'),
         'api': path.resolve(__dirname, './src/api/'),
         'router': path.resolve(__dirname, './src/router/'),

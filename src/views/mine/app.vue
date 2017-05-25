@@ -37,7 +37,7 @@
     },
 
     methods: {
-      onPersonList (index) {
+      onPersonList(index) {
         switch (index) {
           case 1:
             this.router.push({
@@ -54,7 +54,7 @@
         }
       },
 
-      toPersonal (event) {
+      toPersonal(event) {
         this.router.push({
           page: this.routerPage.personal
         })
@@ -67,9 +67,17 @@
             url: 'http://www.jianshu.com/u/a279a2f8ed63'
           }
         })
+      },
+      toBlog2() {
+        console.log(this.$alert)
+        this.$alert({
+          message: 'This is a alert',
+          duration: 0.3
+        }, function (value) {
+          console.log('alert callback', value)
+        })
       }
     }
   }
+
 </script>
-
-

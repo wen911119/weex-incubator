@@ -15,7 +15,7 @@ Vue.component('osc-navbar', require('components/osc-navbar'))
 Vue.component('osc-tabbar', require('components/osc-tabbar'))
 Vue.component('osc-list', require('components/osc-list'))
 Vue.component('osc-scroller', require('components/osc-scroller'))
-
+Vue.use(require('enhancers/noticeEnhancer.js'))
 // 安装全局配置module
 weex.registerModule('user', {
   getUser (callBack) {
